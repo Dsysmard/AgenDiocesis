@@ -1,0 +1,314 @@
+﻿<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.50727</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{D9B4571B-8585-47E3-B370-F3713891C9E1}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SisCons</RootNamespace>
+    <AssemblyName>SisCons</AssemblyName>
+    <ApplicationIcon>symbol.ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Clases\DataGridViewPrinter.cs" />
+    <Compile Include="Forms\Conexion.cs" />
+    <Compile Include="Forms\FrmPrincipalCitas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FrmPrincipalCitas.Designer.cs">
+      <DependentUpon>FrmPrincipalCitas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FrmPrincipalDiagnostico.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FrmPrincipalDiagnostico.Designer.cs">
+      <DependentUpon>FrmPrincipalDiagnostico.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FrmPrincipalDoctores.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FrmPrincipalDoctores.Designer.cs">
+      <DependentUpon>FrmPrincipalDoctores.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FrmAbout.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FrmAbout.designer.cs">
+      <DependentUpon>FrmAbout.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FrmCitas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FrmCitas.designer.cs">
+      <DependentUpon>FrmCitas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FrmDoctores.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FrmDoctores.designer.cs">
+      <DependentUpon>FrmDoctores.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FrmHistorial.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FrmHistorial.designer.cs">
+      <DependentUpon>FrmHistorial.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FrmMenu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FrmMenu.designer.cs">
+      <DependentUpon>FrmMenu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FrmPacientes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FrmPacientes.designer.cs">
+      <DependentUpon>FrmPacientes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FrmPrincipalPacientes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FrmPrincipalPacientes.Designer.cs">
+      <DependentUpon>FrmPrincipalPacientes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FrmSplash.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FrmSplash.Designer.cs">
+      <DependentUpon>FrmSplash.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FrmVerCitas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FrmVerCitas.designer.cs">
+      <DependentUpon>FrmVerCitas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FrmVerHistorial.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FrmVerHistorial.Designer.cs">
+      <DependentUpon>FrmVerHistorial.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Forms\FrmPrincipalCitas.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>FrmPrincipalCitas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FrmPrincipalDiagnostico.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>FrmPrincipalDiagnostico.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FrmPrincipalDoctores.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>FrmPrincipalDoctores.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FrmAbout.resx">
+      <DependentUpon>FrmAbout.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FrmCitas.resx">
+      <DependentUpon>FrmCitas.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FrmDoctores.resx">
+      <DependentUpon>FrmDoctores.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FrmHistorial.resx">
+      <DependentUpon>FrmHistorial.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FrmMenu.resx">
+      <DependentUpon>FrmMenu.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FrmPacientes.resx">
+      <DependentUpon>FrmPacientes.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FrmPrincipalPacientes.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>FrmPrincipalPacientes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FrmSplash.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>FrmSplash.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FrmVerCitas.resx">
+      <DependentUpon>FrmVerCitas.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FrmVerHistorial.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>FrmVerHistorial.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\application_form_magnify.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\attach.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\book_addresses.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\book_open.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\clock_red.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\date.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\disk.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\door_in.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\emotion_smile.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\emotion_unhappy.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\group.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\group_gear.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\information.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\page_white_add.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\page_white_delete.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\page_white_edit.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\page_white_magnify.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pill.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\printer.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\report.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\report_magnify.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\report_user.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\resultset_first.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\resultset_last.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\resultset_next.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\resultset_previous.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\LabelBackgroun.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\plaster.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\symbol.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\case.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pills3.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\header_bkg_wol2.jpg" />
+    <None Include="Resources\m_head_blend.png" />
+    <None Include="Resources\symbol.png" />
+    <None Include="Resources\msnmessenger.bmp" />
+    <None Include="Resources\BackgrounLabel.bmp" />
+    <None Include="Resources\FondoLabel.bmp" />
+    <None Include="Resources\magnifier.png" />
+    <None Include="Resources\database.png" />
+    <None Include="Resources\find.png" />
+    <None Include="Resources\folder_explore.png" />
+    <None Include="Resources\folder_find.png" />
+    <None Include="Resources\group_add.png" />
+    <Content Include="symbol.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Database\" />
+    <Folder Include="Reports\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

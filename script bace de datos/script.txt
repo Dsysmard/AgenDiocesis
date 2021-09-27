@@ -1,0 +1,124 @@
+CREATE TABLE [dbo].[TblObispo](
+	[Clave_Obispo] [int] NOT NULL,
+	[Nombre] [char](20) NOT NULL,
+	[ApellidoPat] [char](20) NOT NULL,
+	[ApellidoMat] [char](20) NOT NULL,
+	[Domicilio] [char](20) NOT NULL,
+	[Telefono] [nvarchar](12) NULL,
+	[fecha] [datetime] NOT NULL,
+	[Sexo] [char](10) NOT NULL,
+	[Cedula] [nchar](20) NOT NULL,
+	[Especialidad] [char](20) NOT NULL,
+ CONSTRAINT [PK_TblDoctores] PRIMARY KEY CLUSTERED 
+(
+	[Clave_Obispo] ASC
+)WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+SET ANSI_PADDING OFF
+GO
+/****** Object:  Table [dbo].[TblLaicos]    Script Date: 01/03/2014 09:13:21 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+SET ANSI_PADDING ON
+GO
+CREATE TABLE [dbo].[TblLaicos](
+	[Clave_Laicos] [int] NOT NULL,
+	[Nombre] [char](20) NULL,
+	[ApellidoPat] [char](20) NULL,
+	[ApellidoMat] [char](20) NULL,
+	[Domicilio] [char](20) NULL,
+	[Telefono] [nvarchar](12) NULL,
+	[Sexo] [char](10) NULL,
+	[fecha] [datetime] NULL,
+	[email] [nvarchar](30) NULL,
+ CONSTRAINT [PK_TblPacientes] PRIMARY KEY CLUSTERED 
+(
+	[Clave_Laicos] ASC
+)WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+SET ANSI_PADDING OFF
+GO
+/****** Object:  Table [dbo].[TblConsultas]    Script Date: 01/03/2014 09:13:21 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+SET ANSI_PADDING ON
+GO
+CREATE TABLE [dbo].[TblConsultas](
+	[Folio] [int] NOT NULL,
+	[Fecha] [datetime] NOT NULL,
+	[Clave_Laicos] [int] NOT NULL,
+	[Clave_Obispo] [int] NOT NULL,
+	[Hora] [nchar](8) NOT NULL,
+	[Estatura] [nvarchar](8) NOT NULL,
+	[Peso] [float] NOT NULL,
+	[Temperatura] [float] NULL,
+	[Precion] [float] NULL,
+	[Sintomas] [varchar](50) NOT NULL,
+	[Enfermedad] [varchar](50) NOT NULL,
+	[FechaCita] [datetime] NULL
+) ON [PRIMARY]
+GO
+SET ANSI_PADDING OFF
+GO
+/****** Object:  Table [dbo].[TblCitas]    Script Date: 01/03/2014 09:13:21 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+SET ANSI_PADDING ON
+GO
+CREATE TABLE [dbo].[TblCitas](
+	[FolioCitas] [int] NOT NULL,
+	[Clave_Laicos] [int] NOT NULL,
+	[Nombre] [char](20) NOT NULL,
+	[ApellidoPat] [char](20) NOT NULL,
+	[ApellidoMat] [char](20) NOT NULL,
+	[Clave_Obispo] [int] NOT NULL,
+	[Hora] [nchar](8) NOT NULL,
+	[Estatura] [nvarchar](8) NOT NULL,
+	[Peso] [float] NOT NULL,
+	[Temperatura] [float] NULL,
+	[Precion] [float] NULL,
+	[fecha] [datetime] NOT NULL
+) ON [PRIMARY]
+GO
+SET ANSI_PADDING OFF
+GO
+/****** Object:  ForeignKey [FK_TblCitas_TblDoctores1]    Script Date: 01/03/2014 09:13:21 ******/
+ALTER TABLE [dbo].[TblCitas]  WITH NOCHECK ADD  CONSTRAINT [FK_TblCitas_TblDoctores1] FOREIGN KEY([Clave_Obispo])
+REFERENCES [dbo].[TblObispo] ([Clave_Obispo])
+ON UPDATE CASCADE
+ON DELETE CASCADE
+GO
+ALTER TABLE [dbo].[TblCitas] CHECK CONSTRAINT [FK_TblCitas_TblDoctores1]
+GO
+/****** Object:  ForeignKey [FK_TblCitas_TblPacientes]    Script Date: 01/03/2014 09:13:21 ******/
+ALTER TABLE [dbo].[TblCitas]  WITH NOCHECK ADD  CONSTRAINT [FK_TblCitas_TblPacientes] FOREIGN KEY([Clave_Laicos])
+REFERENCES [dbo].[TblLaicos] ([Clave_Laicos])
+ON UPDATE CASCADE
+ON DELETE CASCADE
+GO
+ALTER TABLE [dbo].[TblCitas] CHECK CONSTRAINT [FK_TblCitas_TblPacientes]
+GO
+/****** Object:  ForeignKey [FK_TblConsultas_TblDoctores1]    Script Date: 01/03/2014 09:13:21 ******/
+ALTER TABLE [dbo].[TblConsultas]  WITH NOCHECK ADD  CONSTRAINT [FK_TblConsultas_TblDoctores1] FOREIGN KEY([Clave_Obispo])
+REFERENCES [dbo].[TblObispo] ([Clave_Obispo])
+ON UPDATE CASCADE
+ON DELETE CASCADE
+GO
+ALTER TABLE [dbo].[TblConsultas] CHECK CONSTRAINT [FK_TblConsultas_TblDoctores1]
+GO
+/****** Object:  ForeignKey [FK_TblConsultas_TblPacientes1]    Script Date: 01/03/2014 09:13:21 ******/
+ALTER TABLE [dbo].[TblConsultas]  WITH NOCHECK ADD  CONSTRAINT [FK_TblConsultas_TblPacientes1] FOREIGN KEY([Clave_Laicos])
+REFERENCES [dbo].[TblLaicos] ([Clave_Laicos])
+ON UPDATE CASCADE
+ON DELETE CASCADE
+GO
+ALTER TABLE [dbo].[TblConsultas] CHECK CONSTRAINT [FK_TblConsultas_TblPacientes1]
+GO
